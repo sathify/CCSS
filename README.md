@@ -3,6 +3,16 @@ component-css
 
 CSS architecture for the future web 
 
+
+1. [Elements of Component CSS](#elements)
+2. [Principles of Component CSS](#principles)
+3. [Architecture & Design](#architecture)
+4. [Directory Structure Organization](#directory)
+5. [Naming Conventions for Modified BEM ](#naming)
+6. [Examples](#examples)
+
+
+<a name="naming"></a>
 ### Naming Conventions for Modified BEM
  - `u-className` Global base/utility classes
  - `img-className` Global image classes
