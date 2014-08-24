@@ -41,6 +41,26 @@ SASS is great and refer to the [SASS documentation](http://sass-lang.com/documen
   Compass mixins should nearly *always* be used in cases where vendor prefixes are required.
 
 
+<a name="principles"></a>
+## Principles of Component CSS  
+
+##### Component-based
+Write small and independent components which are reusable. A flexible and reusable css component is one which does not only exist on a specific part of DOM tree or require the use of certain element types. If necessary extra html elements should be used to make a component reusable and flexible. 
+
+##### Modular and Isolated
+Components should have everything necessary to a certain part of the UI and have a single focus. It should also be isolated, meaning it should not directly modify another component.  
+
+Isolation is more important that trying to reuse too much code across components as it can increase dependences and tight coupling. Eventually making the CSS less manageable. 
+
+##### Composable
+Definition from [wikipedia](http://en.wikipedia.org/wiki/Composability)- A highly composable system provides recombinant components that can be selected and assembled in various combinations to satisfy specific user requirements. 
+
+When authoring CSS in a way that aims to reduce the amount of time spent on writing and editing CSS, one should think of it in a way to spend more time changing HTML classes on elements for modifying or adding styles. It is much easier for all developers to author css when it is similar to assembling lego blocks than to fight the CSS war. CSS classes are the building blocks which is used to compose styles. 
+
+##### Documentation
+Most people assume CSS is self-explanatory which is not the case most times. CSS components must be documented clearly which describes how they should be used and what it does. 
+
+
 <a name="naming"></a>
 ## Naming Conventions for Simplified BEM
  - `u-className` Global base/utility classes
