@@ -71,3 +71,32 @@ Most people assume CSS is self-explanatory which is not the case most times. CSS
  - `ComponentName--modifierName` Standard Modules Modifier (M)
  
 Please note the UpperCamelCase Component name to indicate that it is the master element and is the boundary of the component. Whereas the element and modifier names are elementName and modifierName respectively. Please do not use <code>-</code> to separate out component names as it signifies the start of an element/element name.
+
+
+<a name="naming"></a>
+## Architecture and Design
+
+##### Grunt 
+Grunt is a great task runner that can automate all the tasks. Highly recommend using it to configure and compile the CSS. There are also other task runners but in general use it to compile all the necessary SCSS files into CSS, to watch for changes and recompile when changes are detected. 
+
+##### File organization
+Please take a look the the directory structure which is derived from smacss. Notice the <code>ext/</code> where all the external frameworks like bootstrap reside. Anything under <code>ext/</code> should not be overridden as it makes it easier to upgrade and maintain the external CSS frameworks. If you want to override please refer to <code>base/</code> folder for framework overrides file or add it. 
+
+<code>base/</code> is where global base styles used application wide exits.
+     
+<code>_base.scss</code> Base styles for element selectors only. These are sort of "CSS resets" 
+
+<code>_base-classes.scss</code> These are all utility classes used application wide across many pages, views, and components. Prefix class names with <code>u-</code>
+
+<code>_images.scss</code> Please use this as a SCSS compilation source. It should define and inline all site images at Data URIs. <code>/app/styles/images.css</code> is generated from this file.
+
+<code>_animate.scss</code> All animation classes used application wide. 
+
+<code>_bootstrap-overrides.scss</code> Framework overrides only. Sometimes the level of specificity of framework selectors is so high that overriding them requires long specific selectors. Overriding at a global level should NOT be done in context of an SCSS view, module, etc, instead all global overrides go here.
+
+
+##### Components
+Any unit of reusable CSS not mentioned above is considered a "component". We use AngularJS so I categorized them to 3 types of CSS components: view, directive, and standard; and hence the directory structure which is derived from SMACSS. All components follow the above mentioned modified BEM naming convention in combination with the CamelCase. This got me *great wins* in making other team members start following BEM style syntax and also avoided lots of confusion when not using the following <code>-, --, & __</code>!
+
+
+Finally, please have an extensive style-guide for the web application and follow guidelines for [CSS](https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml) and SASS (avoid <code>@extends</code>).
