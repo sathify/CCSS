@@ -1,9 +1,7 @@
 component-css
 =============
 
-CSS architecture for the future web 
-
-Generally large web applications have lot of css files with many developers working on them simultaneously. With the advent of so many frameworks, guidelines, tools and methodologies like SMASS, BEM, OOCSS, etc. there needs to be a css architecture which defines a way to author CSS which is maintainable, manageable, and scalable. 
+Generally large web applications have a lot of css files with many developers working on them simultaneously. With the advent of so many frameworks, guidelines, tools and methodologies like SMASS, BEM, OOCSS, etc. there needs to be a css architecture which defines a way to author CSS which is maintainable, manageable, and scalable. 
 
 We all know reusable, component-based web development is definitely the way forward. [Web components](http://css-tricks.com/modular-future-web-components/)  which are a collection of standards are working their way through the W3C.  They allows us to bundle up markup and styles in to reusable HTML elements which are truly encapsulated. What this means is we need to start thinking component based css development. While browsers are coming up with implementing web components standards, the current phase of developing large web applications with many css components is in a transition and could follow soft-encapsulation.
 
@@ -12,11 +10,10 @@ Component CSS aims to improve the CSS authoring experience for large web applica
 
 1. [Elements](#elements)
 2. [Principles](#principles)
-3. [Architecture & Design](#architecture)
-4. [Directory Structure](#directory)
-5. [Naming Conventions for Simplified BEM ](#naming)
+3. [Directory Structure](#directory)
+4. [Naming Conventions for Simplified BEM ](#naming)
+5. [Architecture & Design](#architecture)
 6. [Examples](#examples)
-
 
 
 <a name="elements"></a>
@@ -53,9 +50,9 @@ Components should have everything necessary to a certain part of the UI and have
 Isolation is more important that trying to reuse too much code across components as it can increase dependences and tight coupling. Eventually making the CSS less manageable. 
 
 ##### Composable
-Definition from [wikipedia](http://en.wikipedia.org/wiki/Composability)- A highly composable system provides recombinant components that can be selected and assembled in various combinations to satisfy specific user requirements. 
+Definition from [wikipedia](http://en.wikipedia.org/wiki/Composability)- a highly composable system provides recombinant components that can be selected and assembled in various combinations to satisfy specific user requirements. 
 
-When authoring CSS in a way that aims to reduce the amount of time spent on writing and editing CSS, one should think of it in a way to spend more time changing HTML classes on elements for modifying or adding styles. It is much easier for all developers to author css when it is similar to assembling lego blocks than to fight the CSS war. CSS classes are the building blocks which is used to compose styles. 
+When authoring CSS in a way that aims to reduce the amount of time spent on writing and editing CSS, one should think of it in a way to spend more time changing HTML classes on elements for modifying or adding styles. It is much easier for all developers to author css when it is similar to assembling lego blocks than to fight the CSS war. CSS classes are the building blocks which should be used to compose styles. 
 
 ##### Documentation
 Most people assume CSS is self-explanatory which is not the case most times. CSS components must be documented clearly which describes how they should be used and what it does. 
@@ -65,19 +62,19 @@ Most people assume CSS is self-explanatory which is not the case most times. CSS
 ## Naming Conventions for Simplified BEM
  - `u-className` Global base/utility classes
  - `img-className` Global image classes
- - `animate-className` Animation classes
- - `ComponentName` Standard Modules (B)
- - `ComponentName-elementName` Standard Modules Element (E)
- - `ComponentName--modifierName` Standard Modules Modifier (M)
+ - `animate-className` Global animation classes
+ - `ComponentName` Standard Components (B)
+ - `ComponentName-elementName` Conponent's Element (E)
+ - `ComponentName--modifierName` Component's Modifier (M)
  
-Please note the UpperCamelCase Component name to indicate that it is the master element and is the boundary of the component. Whereas the element and modifier names are elementName and modifierName respectively. Please do not use <code>-</code> to separate out component names as it signifies the start of an element/element name.
+Please note the UpperCamelCase Component name to indicate that it is the master element and denotes the boundary of the component. Whereas the element and modifier names are elementName and modifierName respectively. Please do not use <code>-</code> to separate out component names as it signifies the start of an element/element name.
 
 
-<a name="naming"></a>
+<a name="architecture"></a>
 ## Architecture and Design
 
 ##### Grunt 
-Grunt is a great task runner that can automate all the tasks. Highly recommend using it to configure and compile the CSS. There are also other task runners but in general use it to compile all the necessary SCSS files into CSS, to watch for changes and recompile when changes are detected. 
+Grunt is a great task runner that can automate most of the tasks. Highly recommend using it to configure and compile the CSS. There are also other task runners but in general use it to compile all the necessary SCSS files into CSS, to watch for changes and recompile when changes are detected. 
 
 ##### File organization
 Please take a look the the directory structure which is derived from smacss. Notice the <code>ext/</code> where all the external frameworks like bootstrap reside. Anything under <code>ext/</code> should not be overridden as it makes it easier to upgrade and maintain the external CSS frameworks. If you want to override please refer to <code>base/</code> folder for framework overrides file or add it. 
@@ -92,8 +89,7 @@ Please take a look the the directory structure which is derived from smacss. Not
 
 <code>_animate.scss</code> All animation classes used application wide. 
 
-<code>_bootstrap-overrides.scss</code> Framework overrides only. Sometimes the level of specificity of framework selectors is so high that overriding them requires long specific selectors. Overriding at a global level should NOT be done in context of an SCSS view, module, etc, instead all global overrides go here.
-
+<code>_bootstrap-overrides.scss</code> Framework overrides only. Sometimes the level of specificity of framework selectors is so high that overriding them requires long specific selectors. Overriding at a global level should not be done in the context of a SCSS component, instead all global overrides go here.
 
 ##### Components
 Any unit of reusable CSS not mentioned above is considered a "component". We use AngularJS so I categorized them to 3 types of CSS components: view, directive, and standard; and hence the directory structure which is derived from SMACSS. All components follow the above mentioned modified BEM naming convention in combination with the CamelCase. This got me *great wins* in making other team members start following BEM style syntax and also avoided lots of confusion when not using the following <code>-, --, & __</code>!
