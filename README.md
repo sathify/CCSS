@@ -18,8 +18,31 @@ Component CSS aims to improve the CSS authoring experience for large web applica
 6. [Examples](#examples)
 
 
+
+<a name="elements"></a>
+## Elements of Component CSS 
+
+Below are the major elements used either fully or in a modified way to achieve the best configuration for the component-css architecture. 
+
+
+##### SMACSS
+SMACSS stands for Scalable and Modular Architecture for CSS. It is more of a style guide than a rigid framework to design and author scalable css for big applications. Read about [SMACSS](http://smacss.com) for background on the structure as component css uses it. 
+ 
+
+##### BEM
+BEM stands for “Block”, “Element”, “Modifier”. It is a front-end methodology which is a new way of thinking when developing web interfaces. The guys at Yandex came up with BEM and more information is  [here](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+
+##### SASS
+SASS is great and refer to the [SASS documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html).
+
+
+##### Compass
+  Compass has no class definitions, only mixins. It is used for general useful mixins, and sass compilation.
+  Compass mixins should nearly *always* be used in cases where vendor prefixes are required.
+
+
 <a name="naming"></a>
-### Naming Conventions for Simplified BEM
+## Naming Conventions for Simplified BEM
  - `u-className` Global base/utility classes
  - `img-className` Global image classes
  - `animate-className` Animation classes
