@@ -27,7 +27,7 @@ SMACSS stands for Scalable and Modular Architecture for CSS. It is more of a sty
  
 
 ##### BEM
-BEM stands for “Block”, “Element”, “Modifier”. It is a front-end methodology which is a new way of thinking when developing web interfaces. The guys at Yandex came up with BEM and more information is  [here](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+BEM stands for “Block”, “Element”, “Modifier”. It is a front-end methodology which is a new way of thinking when developing web interfaces. The guys at Yandex came up with BEM and more information is  [here](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
 
 ##### SASS
 SASS is great and refer to the [SASS documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html).
@@ -128,7 +128,7 @@ Please take a look the the directory structure which is derived from smacss. Not
 
 <code>_base-classes.scss</code> These are all utility classes used application wide across many pages, views, and components. Prefix class names with <code>u-</code>
 
-<code>_images.scss</code> Please use this as a SCSS compilation source. It should define and inline all site images at Data URIs. <code>/app/styles/images.css</code> is generated from this file.
+<code>images.scss</code> Please use this as a SCSS compilation source. It should define and inline all site images as Data URIs. <code>/app/styles/images.css</code> is generated from this file.
 
 <code>_animate.scss</code> All animation classes used application wide. 
 
