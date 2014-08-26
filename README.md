@@ -57,6 +57,49 @@ When authoring CSS in a way that aims to reduce the amount of time spent on writ
 ##### Documentation
 Most people assume CSS is self-explanatory which is not the case most times. CSS components must be documented clearly which describes how they should be used and what it does. 
 
+<a name="directory"></a>
+## Directory Structure
+Below is the directory structure, I have also included an example set up in this repo. 
+<code><pre>styles
+    ├── bootstrap.css
+    ├── ext
+    │   ├── bootstrap
+    │   │   ├── _settings.scss
+    │   │   └── bootstrap.scss
+    │   └── font-awesome
+    │       └── font-awesome.scss
+    ├── font-awesome.css
+    ├── images.css
+    ├── main.css
+    └── **scss
+        ├── _config.scss
+        ├── base
+        │   ├── _animation-classes.scss
+        │   ├── _base-classes.scss
+        │   ├── _base.scss
+        │   └── images.scss
+        ├── components
+        │   ├── directives
+        │   │   ├── _empty-state.scss
+        │   │   ├── _legend.scss
+        │   │   └── _status-message.scss
+        │   ├── pages
+        │   │   ├── _404.scss
+        │   │   └── _redirect.scss
+        │   └── standard
+        │       ├── _alarm-state.scss
+        │       ├── _graph-message.scss
+        │       └── _panel.scss
+        ├── main.scss
+        ├── mixins
+        │   ├── _animation.scss
+        │   ├── _bem.scss
+        │   └── _icon.scss
+        └── themes
+            └── _light.scss**</pre></code>
+
+Please only edit/author the files in the <code>scss/</code> folder denoted in the bold above. In the HTML page, please include all the <code>.css</code> files from <code>style/</code> folder which are generated after the SCSS compiles using grunt, etc. Never alter them. 
+
 
 <a name="naming"></a>
 ## Naming Conventions for Simplified BEM
@@ -92,7 +135,7 @@ Please take a look the the directory structure which is derived from smacss. Not
 <code>_bootstrap-overrides.scss</code> Framework overrides only. Sometimes the level of specificity of framework selectors is so high that overriding them requires long specific selectors. Overriding at a global level should not be done in the context of a SCSS component, instead all global overrides go here.
 
 ##### Components
-Any unit of reusable CSS not mentioned above is considered a "component". We use AngularJS so I categorized them to 3 types of CSS components: view, directive, and standard; and hence the directory structure which is derived from SMACSS. All components follow the above mentioned modified BEM naming convention in combination with the CamelCase. This got me *great wins* in making other team members start following BEM style syntax and also avoided lots of confusion when not using the following <code>-, --, & __</code>!
+Any unit of reusable CSS not mentioned above is considered a "component". We use AngularJS so I categorized them to 3 types of CSS components: view/page, directive, and standard; and hence the directory structure which is derived from SMACSS. In the example setup in this repository and if you look at the directory structure, I created explicit folders to be clear. If your application is small, you may put them in one folder. All components follow the [modified BEM naming convention](https://github.com/sathify/component-css#naming) in combination with the CamelCase. This got me *great wins* in making other team members start following BEM style syntax and also avoided lots of confusion when not using the typical BEM style with <code>-, --, & __</code> symbols!
 
 
 Please make sure CSS class definition order in a component reflect the html view. This makes it easier to scan, style, edit and apply classes easily. Finally, please have an extensive style-guide for the web application and follow guidelines for [CSS](https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml) and SASS (avoid <code>@extends</code>).
