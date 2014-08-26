@@ -1,0 +1,19 @@
+/* Mixins to easily set some styles for all icons
+ * contained within a css block.
+ * @author: sathify
+ * @mixin: icon
+ */
+
+@mixin icon() {
+  [class^="fa-"],
+  [class*=" fa-"] {
+    @content;
+  }
+}
+
+@mixin iconHover() {
+  [class^="fa-"]:hover,
+  [class*=" fa-"]:hover {
+    @content;
+  }
+}

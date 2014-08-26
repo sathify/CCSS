@@ -1,0 +1,47 @@
+/*
+ * All images used in the site are defined here.
+ * These classes are not available to @extend
+ * in other sass files.
+ */
+
+/*
+ * Extend this class to make the element to behave like a standard image tag.
+ */
+.img {
+  // Don't extend bg image into borders.
+  background-clip: padding-box;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  display: inline-block;
+}
+
+/**
+ * Mixin shortcut for creating image classes.
+ */
+@mixin imgCreate($image) {
+  @extend .img;
+
+  background-image: inline-image($image);
+  height: image-height($image);
+  width: image-width($image);
+}
+
+/*
+ * All images that behave like <img> tags.
+ * Format: img-<className>
+ */
+.img-fanaticon {
+  @include imgCreate('/fanaticon.png');
+}
+
+.img-productLogo {
+  @include imgCreate('/logo-product.png');
+}
+
+/*
+ * Image classes for standard css background images.
+ */
+
+.img-mehCloud {
+  background-image: inline-image('/meh-cloud.png');
+}

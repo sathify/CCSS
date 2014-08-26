@@ -1,0 +1,16 @@
+/*
+ * Empty state for Graph component
+ * with no data and a message for user.
+ * @author: sathify
+ * @component: EmptyState
+ */
+
+.EmptyState {
+  padding-top: 30px;
+
+  @include e(message) {
+    color: #666;
+    font-size: 120%;
+    padding-bottom: 25px;
+  }
+}

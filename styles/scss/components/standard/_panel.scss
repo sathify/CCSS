@@ -1,0 +1,39 @@
+/* A generic panel component to be used in the
+ * application. With heading, sub heading, items,
+ * a key and value.
+ * @author: sathify
+ * @component: Panel/Section
+ */
+
+.Panel {
+  margin: 0;
+  padding: 10px;
+
+  @include e(heading) {
+    font-size: 214%;
+    font-weight: 600;
+    margin-top: 5px;
+  }
+
+  @include e(subHeader) {
+    font-size: 170%;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+
+  @include e(item) {
+    padding-top: 14px;
+  }
+
+  @include e(key) {
+    color: #999;
+    text-align: right;
+  }
+
+  @include e(value) {
+    font-size: 150%;
+    font-weight: 400;
+  }
+}
+

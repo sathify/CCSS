@@ -1,0 +1,36 @@
+/*
+ * Legends for graphs which are inline.
+ * It has a label and a bar to denote color.
+ * @author: sathify
+ * @component: Legend
+ */
+
+.Legend {
+  font-weight: normal;
+  list-style: none;
+  max-height: 50px;
+  margin: 0px;
+
+  @include e(item) {
+    display: inline;
+    padding-right: 30px;
+    white-space: nowrap;
+
+  }
+
+  @include e(label) {
+    color: $color-font-body;
+
+    &:hover {
+      color: $color-font-body;
+      text-decoration: underline;
+    }
+  }
+
+  @include e(bar) {
+    display: inline-block;
+    height: 11px;
+    margin-right: 3px;
+    width: 5px;
+  }
+}

@@ -1,0 +1,33 @@
+@include sg-x-keyframes(fadeIn) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen {
+  .animate-fadeIn {
+    opacity: 0;
+    @include sg-x-animation(0.3s, 0.6s, fadeIn);
+  }
+
+  // NOTE: max-height must be set on each instance to work properly.
+  .animate-slideVertical {
+    @include transition-property(all);
+    @include transition-duration(0.2s);
+    @include transform-origin(50%, 0%);
+    @include scaleY(1);
+    opacity: 1;
+    overflow: hidden;
+
+    &.ng-hide {
+      @include scaleY(0);
+      display: block !important;
+      max-height: 0px;
+      opacity: 0;
+    }
+  }
+}

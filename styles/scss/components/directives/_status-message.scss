@@ -1,0 +1,19 @@
+/*
+ * Status Message for the Application.
+ * @author: sathify
+ * @component: StatusMessage
+ */
+
+.StatusMessage {
+
+  @include transition-duration(1s);
+  @include transition-timing-function(ease);
+  margin-bottom: 10px;
+  min-height: 42px;
+  padding: 10px 15px;
+  opacity: 0;
+
+  @include m(visible){
+    opacity: 1;
+  }
+}

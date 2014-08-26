@@ -1,0 +1,39 @@
+/*
+ * 404 page CSS with meh cloud image,
+ * description and error.
+ * @author: sathify
+ * @component: ErrorPage
+ */
+
+.ErrorPage {
+
+  $spacer: 50px;
+
+  @include e(imgLogo) {
+    margin: 20px 0;
+  }
+
+  @include e(imgMehCloud) {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    min-height: 300px;
+  }
+
+  @include e(content) {
+    padding: $spacer;
+  }
+
+  @include e(explanation) {
+    color: $color-font-inactive;
+    margin: $spacer 0;
+  }
+
+  @include e(error-title) {
+    margin: $spacer 0;
+  }
+
+  @include e(button) {
+    margin: 0 $spacer;
+  }
+
+}

@@ -1,0 +1,36 @@
+/* Icons */
+
+.u-largeSpinnerIcon {
+  color: $color-font-inactive;
+  font-size: 30px;
+  margin-top: 60px;
+}
+
+.u-fontawesomeCheck {
+  color: $color-ok;
+  font-size: 14px;
+}
+
+.u-textLarger {
+  font-size: 140%;
+}
+
+/* min width and min height */
+@for $size from 1 through 12 {
+
+  .u-maxWidth-#{$size * 100} {
+    max-width: #{$size * 100}px;
+  }
+  .u-minHeight-#{$size * 100} {
+    min-height: #{$size * 100}px;
+  }
+}
+
+/* truncate label */
+.u-labelTruncator {
+  overflow: hidden;
+  padding-right: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}

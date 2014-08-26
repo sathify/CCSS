@@ -1,0 +1,26 @@
+/* Alarm State which can exist
+ * in three states.
+ * usage example:
+ * <a class="AlarmState"
+ * ng-class="state===critical:'AlarmState--critical'"></a>
+ * @author: sathify
+ * @component: Alarm state
+ */
+
+.AlarmState {
+
+  font-weight: bold;
+
+  @include m(critical) {
+    color: $color-critical;
+  }
+
+  @include m(warning) {
+    color: $color-warning;
+  }
+
+  @include m(ok) {
+    color: $color-ok;
+  }
+
+}

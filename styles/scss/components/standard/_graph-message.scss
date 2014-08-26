@@ -1,0 +1,14 @@
+/* Graph Message with a sub text
+ * @author: sathify
+ * @component: Graph Message
+ */
+
+.GraphMessage {
+  color: $color-font-inactive;
+  font: 600 16px $font-family-alt;
+  margin-bottom: 3px;
+
+  @include e(subMessage) {
+    color: $color-font-inactive;
+  }
+}

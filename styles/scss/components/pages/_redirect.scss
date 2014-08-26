@@ -1,0 +1,25 @@
+/*
+ * Redirect Page CSS for an explanation
+ * and button group.
+ * @author: sathify
+ * @component: RedirectPage
+ */
+
+.RedirectPage {
+
+  margin: 40px 0;
+
+  @include e(explanation) {
+    color: #666;
+    font-size: 120%;
+  }
+
+  @include e(btn-group) {
+    margin: 20px 0;
+
+    @include m(inActive) {
+      margin-right: 10px;
+    }
+  }
+
+}
