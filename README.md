@@ -47,7 +47,7 @@ Write small and independent components which are reusable. A reusable css compon
 ##### Modular and Isolated
 Components should have everything necessary to a certain part of the UI and have a single focus. It should also be isolated, meaning it should not directly modify or depend on another component.
 
-Isolation is more important that code reuse across components as it can increase dependencies and tight coupling, eventually making the CSS less manageable.
+Isolation is more important than code reuse across components as it can increase dependencies and tight coupling, eventually making the CSS less manageable.
 
 ##### Composable
 When authoring CSS in a way that aims to reduce the amount of time spent writing it, one should think of it in a way to spend more time changing HTML classes on elements for modifying or adding styles. It is much easier for all developers to author css when it is like assembling lego blocks than to fight the CSS war. CSS classes are the building blocks which should be used to compose styles.
