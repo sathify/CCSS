@@ -7,11 +7,13 @@ As a frontend engineer, I believe that component-based web development is the wa
 
 Component CSS is an architecture which simplifies the CSS authoring experience for large web applications.
 
+As a developer, use it when you are setting up the CSS Architecture for a large web application. 
+
 
 1. [Elements](#elements)
 2. [Principles](#principles)
 3. [Directory Structure](#directory)
-4. [Naming Conventions for Simplified BEM ](#naming)
+4. [Naming Conventions - Simplified BEM ](#naming)
 5. [Architecture & Design](#architecture)
 6. [Example](#example)
 
@@ -35,7 +37,7 @@ SASS is CSS with [superpowers](http://davidwalsh.name/future-sass). Highly recom
 
 ##### Compass
   Compass has no class definitions, it is an extension of SASS which provides a lot of utilities. It is used for general useful mixins, and sass compilation.
-  Compass mixins should nearly *always* be used in cases where vendor prefixes are required.
+  Compass mixins should nearly *always* be used in cases where vendor prefixes are required. This again is a nice to have. 
 
 
 <a name="principles"></a>
@@ -52,13 +54,16 @@ Isolation is more important than code reuse across components as it can increase
 ##### Composable
 When authoring CSS in a way that aims to reduce the amount of time spent writing it, one should think of it in a way to spend more time changing HTML classes on elements for modifying or adding styles. It is much easier for all developers to author css when it is like assembling lego blocks than to fight the CSS war. CSS classes are the building blocks which should be used to compose styles.
 
+##### Predictable
+Predictable means when you author CSS, your rules behave as you expect. This is important for large applications which has many pages. Avoid using overly complicated selectors and generic class names as these can lead to unpredictable css. 
+
 ##### Documentation
 Most people assume CSS is self-explanatory. In fact, this is usually not the case! CSS components must be documented clearly which describes how they should be used and what it does.
 
 <a name="directory"></a>
 ## Directory Structure
-Below is the directory structure, I have also included an example set up in this repo.
-<code><pre>styles
+Below is an example directory structure for easier viziualization, I have also included an example set up in this repo.
+<pre><code>styles
     ├── bootstrap.css
     ├── ext
     │   ├── bootstrap
@@ -94,7 +99,7 @@ Below is the directory structure, I have also included an example set up in this
         │   ├── _bem.scss
         │   └── _icon.scss
         └── themes
-            └── _light.scss**</pre></code>
+            └── _light.scss**</code></pre>
 
 Only edit/author the files in the <code>scss/</code> folder denoted in the bold above. This allows for updating external libraries easily which are in the `ext/`. Many applications start out with an external CSS framework like bootstrap or foundation, etc. so I added them in the example set up in the `ext/` folder. It's absolutely fine to have all the CSS written from scratch and everything else mentioned above applies. 
 
@@ -103,7 +108,7 @@ The directory `components/` has desired efficacy in an AngularJS application but
 In the HTML page, include all the <code>.css</code> files from <code>style/</code> folder which are generated after the SCSS compiles using grunt, compass, etc. Never alter them.
 
 <a name="naming"></a>
-## Naming Conventions for Simplified BEM
+## Naming Conventions - Simplified BEM
  - `u-className` Global base/utility classes
  - `img-className` Global image classes
  - `animate-className` Global animation classes
@@ -162,7 +167,6 @@ Here is an example component in SASS.
     }
   }
 }
-
 ```
 
 It compiles to the following CSS:
@@ -200,17 +204,26 @@ Your HTML might look something like below.
 
 Refer to the simplified [BEM mixin](https://github.com/sathify/component-css/blob/master/styles/scss/mixins/_bem.scss) which uses reference selector to achieve this and is simpler than @at-root. [Working with BEM](http://www.integralist.co.uk/posts/maintainable-css-with-bem/) got way easier in version Sass 3.3> which gives us the ability to write maintainable code that is easy to understand.
 
-### Credits and Reading
+### Resources and Credits
 
+
+##### CSS 
 * [SMACSS](https://smacss.com/)
 * [SASS Features](http://davidwalsh.name/future-sass)
 * [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
-* [Component Based Development](http://en.wikipedia.org/wiki/Component-based_software_engineering)
-* [Composabile Design](http://en.wikipedia.org/wiki/Composability)
-* [Web Components](http://css-tricks.com/modular-future-web-components/)
 * [CSS guidlines](https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml) 
 * [CSS Tips](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS)
 * [Debug CSS](https://github.com/yahoo/debugCSS)
 * [High-level Guidelines](http://cssguidelin.es/)
 * [Idiomatic CSS](https://github.com/necolas/idiomatic-css)
+* [Single Responsibility](http://drewbarontini.com/articles/single-responsibility/)
+
+##### General
+* [Web Components](http://css-tricks.com/modular-future-web-components/)
+* [Component Based Development](http://en.wikipedia.org/wiki/Component-based_software_engineering)
 * [Wikipedia definition of composability](http://en.wikipedia.org/wiki/Composability)
+
+##### Credits
+* [Nicholas Gallager](http://nicolasgallagher.com/)
+* [Thierry Koblentz](https://twitter.com/thierrykoblentz)
+* [Harry Roberts](http://csswizardry.com/work/)
