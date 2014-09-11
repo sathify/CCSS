@@ -1,11 +1,11 @@
-component-css
-=============
+CCSS
+====
 
 Large web applications generally have a lot of CSS files and many developers working on them simultaneously. With the advent of so many frameworks, guidelines, tools and methodologies like OOCSS, SMACSS, BEM, etc., developers need a CSS architecture that is maintainable, manageable, and scalable.
 
 As a frontend engineer, I believe that component-based web development is the way forward. [Web components](http://css-tricks.com/modular-future-web-components/)  are a collection of standards that are working their way through the W3C.  They allow us to bundle up markup and styles into reusable HTML elements which are *truly encapsulated*. What this means is we need to start thinking about **component based CSS development**. While the browser makers are implementing these standards, we can use *soft-encapsulation* in the meantime.
 
-Component CSS is an architecture which simplifies the CSS authoring experience for large web applications.
+CCSS [Component CSS] is an architecture which simplifies the CSS authoring experience for large web applications.
 
 As a developer, use it when you are setting up the CSS Architecture for a large web application. 
 
@@ -19,13 +19,13 @@ As a developer, use it when you are setting up the CSS Architecture for a large 
 
 
 <a name="elements"></a>
-## Elements of Component CSS
+## Elements of CCSS
 
-Below are the major elements used either fully or in a modified way to achieve the best configuration for the component-css architecture.
+Below are the major elements used either fully or in a modified way to achieve the best configuration for the CCSS architecture.
 
 
 ##### SMACSS
-SMACSS stands for Scalable and Modular Architecture for CSS. It is more of a style guide than a rigid framework. Read about [SMACSS](http://smacss.com) for background on the structure as component css uses it.
+SMACSS stands for Scalable and Modular Architecture for CSS. It is more of a style guide than a rigid framework. Read about [SMACSS](http://smacss.com) for background on the structure as CCSS uses it.
 
 
 ##### BEM
@@ -41,7 +41,7 @@ SASS is CSS with [superpowers](http://davidwalsh.name/future-sass). Highly recom
 
 
 <a name="principles"></a>
-## Principles of Component CSS
+## Principles of CCSS
 
 ##### Component-based
 Write small and independent components which are reusable. A reusable css component is one which does not only exist on a specific part of the DOM tree or require the use of certain element types. If necessary, extra HTML elements should be used to make a component reusable.
@@ -141,7 +141,7 @@ Please take a look the the directory structure which is derived from smacss. Not
 <code>_bootstrap-overrides.scss</code> Framework overrides only. Sometimes the level of specificity of framework selectors is so high that overriding them requires long specific selectors. Overriding at a global level should not be done in the context of a SCSS component, instead all global overrides go here.
 
 ##### Components
-Any unit of reusable CSS not mentioned above is considered a "component". We use AngularJS so I categorized them to 3 types of CSS components: view/page, directive, and standard; and hence the directory structure which is derived from SMACSS. In the example setup in the [github repository](https://github.com/sathify/component-css/tree/master/styles), I created explicit folders to be clear. If your application is small, you may put them in one folder. All components follow the [modified BEM naming convention](https://github.com/sathify/component-css#naming) in combination with the CamelCase. This got me *great wins* in encouraging other team members to follow BEM style syntax. It also avoided a lot of confusion when moving away from using the typical BEM style with <code>-, --, & __</code> symbols which generate class names like <code>module-name__child-name--modifier-name</code>!
+Any unit of reusable CSS not mentioned above is considered a "component". We use AngularJS so I categorized them to 3 types of CSS components: view/page, directive, and standard; and hence the directory structure which is derived from SMACSS. In the example setup in the [github repository](https://github.com/sathify/ccss/tree/master/styles), I created explicit folders to be clear. If your application is small, you may put them in one folder. All components follow the [modified BEM naming convention](https://github.com/sathify/ccss#naming) in combination with the CamelCase. This got me *great wins* in encouraging other team members to follow BEM style syntax. It also avoided a lot of confusion when moving away from using the typical BEM style with <code>-, --, & __</code> symbols which generate class names like <code>module-name__child-name--modifier-name</code>!
 
 
 Another important thing would be to make sure CSS class definition order in a component reflects the html view. This makes it easier to scan, style, edit and apply classes easily. Finally, it's a good idea to have an extensive style-guide for the web application and follow guidelines for [CSS](https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml) and SASS (avoid <code>@extends</code>).
@@ -149,7 +149,7 @@ Another important thing would be to make sure CSS class definition order in a co
 <a name="example"></a>
 ## Example
 
-Refer to the [code](https://github.com/sathify/component-css/tree/master/styles) for an example set-up of the CSS.
+Refer to the [code](https://github.com/sathify/ccss/tree/master/styles) for an example set-up of the CSS.
 
 Here is an example component in SASS.
 ```
@@ -202,7 +202,7 @@ Your HTML might look something like below.
       </div>
     </div>
 
-Refer to the simplified [BEM mixin](https://github.com/sathify/component-css/blob/master/styles/scss/mixins/_bem.scss) which uses reference selector to achieve this and is simpler than @at-root. [Working with BEM](http://www.integralist.co.uk/posts/maintainable-css-with-bem/) got way easier in version Sass 3.3> which gives us the ability to write maintainable code that is easy to understand.
+Refer to the simplified [BEM mixin](https://github.com/sathify/ccss/blob/master/styles/scss/mixins/_bem.scss) which uses reference selector to achieve this and is simpler than @at-root. [Working with BEM](http://www.integralist.co.uk/posts/maintainable-css-with-bem/) got way easier in version Sass 3.3> which gives us the ability to write maintainable code that is easy to understand.
 
 ### Resources and Credits
 
