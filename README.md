@@ -16,6 +16,8 @@ As a developer, use it when you are setting up the CSS Architecture for a large 
 4. [Naming Conventions - Simplified BEM ](#naming)
 5. [Architecture & Design](#architecture)
 6. [Example](#example)
+7. [Contributing](#contributing)
+8. [Resources](#resources)
 
 
 <a name="elements"></a>
@@ -204,7 +206,15 @@ Your HTML might look something like below.
 
 Refer to the simplified [BEM mixin](https://github.com/sathify/ccss/blob/master/styles/scss/mixins/_bem.scss) which uses reference selector to achieve this and is simpler than @at-root. [Working with BEM](http://www.integralist.co.uk/posts/maintainable-css-with-bem/) got way easier in version Sass 3.3> which gives us the ability to write maintainable code that is easy to understand.
 
-### Resources and Credits
+<a name="contributing"></a>
+## Contributing
+
+Contributions in the form of issues/PRs for adding more examples, improvements with post processing, clarifications, etc. are most helpful. 
+
+Thanks for the initial contributions from [@jonrahoi](https://github.com/jonrahoi) [@ksheedlo](https://github.com/ksheedlo) [@leemunroe](https://github.com/leemunroe) and [@eddywashere](https://github.com/eddywashere).
+
+<a name="resources"></a>
+## Resources and Credits
 
 
 ##### CSS 
