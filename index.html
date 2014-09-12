@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>CCSS by sathify</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">CCSS</h1>
+        <p class="header">CSS architecture for web applications</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/sathify/CCSS/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/sathify/CCSS/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/sathify/CCSS">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/sathify">sathify</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="ccss" class="anchor" href="#ccss"><span class="octicon octicon-link"></span></a>CCSS</h1>
+
+<p>CCSS [Component CSS] is an architecture which simplifies the CSS authoring experience for large web applications.</p>
+
+<h5>
+<a name="why" class="anchor" href="#why"><span class="octicon octicon-link"></span></a>Why?</h5>
+
+<p>Large web applications generally have a lot of CSS files and many developers working on them simultaneously. With the advent of so many frameworks, guidelines, tools and methodologies like OOCSS, SMACSS, BEM, etc., developers need a CSS architecture that is maintainable, manageable, and scalable.</p>
+
+<p>As a frontend engineer, I believe that component-based web development is the way forward. <a href="http://css-tricks.com/modular-future-web-components/">Web components</a>  are a collection of standards that are working their way through the W3C.  They allow us to bundle up markup and styles into reusable HTML elements which are <em>truly encapsulated</em>. What this means is we need to start thinking about <strong>component based CSS development</strong>. While the browser makers are implementing these standards, we can use <em>soft-encapsulation</em> in the meantime.</p>
+
+<h5>
+<a name="when" class="anchor" href="#when"><span class="octicon octicon-link"></span></a>When?</h5>
+
+<p>As a developer, use it when you are setting up the CSS Architecture for a complex web application. </p>
+
+<h2>
+<a name="contents" class="anchor" href="#contents"><span class="octicon octicon-link"></span></a>Contents</h2>
+
+<ol>
+<li><a href="#elements">Elements</a></li>
+<li><a href="#principles">Principles</a></li>
+<li><a href="#directory">Directory Structure</a></li>
+<li><a href="#naming">Naming Conventions - Simplified BEM </a></li>
+<li><a href="#architecture">Architecture &amp; Design</a></li>
+<li><a href="#example">Example</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#resources">Resources</a></li>
+</ol><p><a name="elements"></a></p>
+
+<h2>
+<a name="elements-of-ccss" class="anchor" href="#elements-of-ccss"><span class="octicon octicon-link"></span></a>Elements of CCSS</h2>
+
+<p>Below are the major elements used either fully or in a modified way to achieve the best configuration for the CCSS architecture.</p>
+
+<h5>
+<a name="smacss" class="anchor" href="#smacss"><span class="octicon octicon-link"></span></a>SMACSS</h5>
+
+<p>SMACSS stands for Scalable and Modular Architecture for CSS. It is more of a style guide than a rigid framework. Read about <a href="http://smacss.com">SMACSS</a> for background on the structure as CCSS uses it.</p>
+
+<h5>
+<a name="bem" class="anchor" href="#bem"><span class="octicon octicon-link"></span></a>BEM</h5>
+
+<p>BEM stands for “Block”, “Element”, “Modifier”. It is a front-end methodology which is a new way of thinking when developing web interfaces. The guys at Yandex came up with BEM and more information can be found  <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">here</a>.</p>
+
+<h5>
+<a name="sass" class="anchor" href="#sass"><span class="octicon octicon-link"></span></a>SASS</h5>
+
+<p>SASS is CSS with <a href="http://davidwalsh.name/future-sass">superpowers</a>. Highly recommend it but you can also use LESS if you prefer that. Please refer to the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html">SASS documentation</a> for more information.</p>
+
+<h5>
+<a name="compass" class="anchor" href="#compass"><span class="octicon octicon-link"></span></a>Compass</h5>
+
+<p>Compass has no class definitions, it is an extension of SASS which provides a lot of utilities. It is used for general useful mixins, and sass compilation.
+  Compass mixins should nearly <em>always</em> be used in cases where vendor prefixes are required. This again is a nice to have. </p>
+
+<p><a name="principles"></a></p>
+
+<h2>
+<a name="principles-of-ccss" class="anchor" href="#principles-of-ccss"><span class="octicon octicon-link"></span></a>Principles of CCSS</h2>
+
+<h5>
+<a name="component-based" class="anchor" href="#component-based"><span class="octicon octicon-link"></span></a>Component-based</h5>
+
+<p>Write small and independent components which are reusable. A reusable css component is one which does not only exist on a specific part of the DOM tree or require the use of certain element types. If necessary, extra HTML elements should be used to make a component reusable.</p>
+
+<h5>
+<a name="modular-and-isolated" class="anchor" href="#modular-and-isolated"><span class="octicon octicon-link"></span></a>Modular and Isolated</h5>
+
+<p>Components should have everything necessary to a certain part of the UI and have a single focus. It should also be isolated, meaning it should not directly modify or depend on another component.</p>
+
+<p>Isolation is more important than code reuse across components as it can increase dependencies and tight coupling, eventually making the CSS less manageable.</p>
+
+<h5>
+<a name="composable" class="anchor" href="#composable"><span class="octicon octicon-link"></span></a>Composable</h5>
+
+<p>When authoring CSS in a way that aims to reduce the amount of time spent writing it, one should think of it in a way to spend more time changing HTML classes on elements for modifying or adding styles. It is much easier for all developers to author css when it is like assembling lego blocks than to fight the CSS war. CSS classes are the building blocks which should be used to compose styles.</p>
+
+<h5>
+<a name="predictable" class="anchor" href="#predictable"><span class="octicon octicon-link"></span></a>Predictable</h5>
+
+<p>Predictable means when you author CSS, your rules behave as you expect. This is important for large applications which has many pages. Avoid using overly complicated selectors and generic class names as these can lead to unpredictable css. </p>
+
+<h5>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h5>
+
+<p>Most people assume CSS is self-explanatory. In fact, this is usually not the case! CSS components must be documented clearly which describes how they should be used and what it does.</p>
+
+<p><a name="directory"></a></p>
+
+<h2>
+<a name="directory-structure" class="anchor" href="#directory-structure"><span class="octicon octicon-link"></span></a>Directory Structure</h2>
+
+<p>Below is an example directory structure for easier viziualization, I have also included an example set up in this repo.</p>
+
+<pre><code>styles
+    ├── bootstrap.css
+    ├── ext
+    │   ├── bootstrap
+    │   │   ├── _settings.scss
+    │   │   └── bootstrap.scss
+    │   └── font-awesome
+    │       └── font-awesome.scss
+    ├── font-awesome.css
+    ├── images.css
+    ├── main.css
+    └── **scss
+        ├── _config.scss
+        ├── base
+        │   ├── _animation-classes.scss
+        │   ├── _base-classes.scss
+        │   ├── _base.scss
+        │   └── images.scss
+        ├── components
+        │   ├── directives
+        │   │   ├── _empty-state.scss
+        │   │   ├── _legend.scss
+        │   │   └── _status-message.scss
+        │   ├── pages
+        │   │   ├── _404.scss
+        │   │   └── _redirect.scss
+        │   └── standard
+        │       ├── _alarm-state.scss
+        │       ├── _graph-message.scss
+        │       └── _panel.scss
+        ├── main.scss
+        ├── mixins
+        │   ├── _animation.scss
+        │   ├── _bem.scss
+        │   └── _icon.scss
+        └── themes
+            └── _light.scss**</code></pre>
+
+<p>Only edit/author the files in the <code>scss/</code> folder denoted in the bold above. This allows for updating external libraries easily which are in the <code>ext/</code>. Many applications start out with an external CSS framework like bootstrap or foundation, etc. so I added them in the example set up in the <code>ext/</code> folder. It's absolutely fine to have all the CSS written from scratch and everything else mentioned above applies. </p>
+
+<p>The directory <code>components/</code> has desired efficacy in an AngularJS application but please feel free to customize it. More information is in <a href="#architecture">Architecture</a> section.</p>
+
+<p>In the HTML page, include all the <code>.css</code> files from <code>style/</code> folder which are generated after the SCSS compiles using grunt, compass, etc. Never alter them.</p>
+
+<p><a name="naming"></a></p>
+
+<h2>
+<a name="naming-conventions---simplified-bem" class="anchor" href="#naming-conventions---simplified-bem"><span class="octicon octicon-link"></span></a>Naming Conventions - Simplified BEM</h2>
+
+<ul>
+<li>
+<code>u-className</code> Global base/utility classes</li>
+<li>
+<code>img-className</code> Global image classes</li>
+<li>
+<code>animate-className</code> Global animation classes</li>
+<li>
+<code>ComponentName</code> Standard Components (B)</li>
+<li>
+<code>ComponentName-elementName</code> Conponent's Element (E)</li>
+<li>
+<code>ComponentName--modifierName</code> Component's Modifier (M)</li>
+</ul><p>Note the UpperCamelCase Component name to indicate that it is the master element and denotes the boundary of the component. Whereas the element and modifier names are elementName and modifierName respectively. Do not use <code>-</code> to separate out component names as it signifies the start of an element/element name.</p>
+
+<p><a name="architecture"></a></p>
+
+<h2>
+<a name="architecture-and-design" class="anchor" href="#architecture-and-design"><span class="octicon octicon-link"></span></a>Architecture and Design</h2>
+
+<h5>
+<a name="grunt" class="anchor" href="#grunt"><span class="octicon octicon-link"></span></a>Grunt</h5>
+
+<p>Grunt is a great task runner that can automate most of the tasks. Highly recommend using it to configure and compile the CSS. There are also other task runners but in general use it to compile all the necessary SCSS files into CSS, to watch for changes and recompile when changes are detected.</p>
+
+<h5>
+<a name="file-organization" class="anchor" href="#file-organization"><span class="octicon octicon-link"></span></a>File organization</h5>
+
+<p>Please take a look the the directory structure which is derived from smacss. Notice the <code>ext/</code> where all the external frameworks like bootstrap reside. Anything under <code>ext/</code> should not be overridden as it makes it easier to upgrade and maintain the external CSS frameworks. If you want to override please refer to <code>base/</code> folder for framework overrides file or add it.</p>
+
+<p><code>base/</code> is where global base styles used application wide exits.</p>
+
+<p><code>_base.scss</code> Base styles for element selectors only. These are sort of "CSS resets"</p>
+
+<p><code>_base-classes.scss</code> These are all utility classes used application wide across many pages, views, and components. Prefix class names with <code>u-</code></p>
+
+<p><code>images.scss</code> Use this as a SCSS compilation source. It should define and inline all site images as Data URIs. <code>/app/styles/images.css</code> is generated from this file.</p>
+
+<p><code>_animate.scss</code> All animation classes used application wide.</p>
+
+<p><code>_bootstrap-overrides.scss</code> Framework overrides only. Sometimes the level of specificity of framework selectors is so high that overriding them requires long specific selectors. Overriding at a global level should not be done in the context of a SCSS component, instead all global overrides go here.</p>
+
+<h5>
+<a name="components" class="anchor" href="#components"><span class="octicon octicon-link"></span></a>Components</h5>
+
+<p>Any unit of reusable CSS not mentioned above is considered a "component". We use AngularJS so I categorized them to 3 types of CSS components: view/page, directive, and standard; and hence the directory structure which is derived from SMACSS. In the example setup in the <a href="https://github.com/sathify/ccss/tree/master/styles">github repository</a>, I created explicit folders to be clear. If your application is small, you may put them in one folder. All components follow the <a href="https://github.com/sathify/ccss#naming">modified BEM naming convention</a> in combination with the CamelCase. This got me <em>great wins</em> in encouraging other team members to follow BEM style syntax. It also avoided a lot of confusion when moving away from using the typical BEM style with <code>-, --, &amp; __</code> symbols which generate class names like <code>module-name__child-name--modifier-name</code>!</p>
+
+<p>Another important thing would be to make sure CSS class definition order in a component reflects the html view. This makes it easier to scan, style, edit and apply classes easily. Finally, it's a good idea to have an extensive style-guide for the web application and follow guidelines for <a href="https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml">CSS</a> and SASS (avoid <code>@extends</code>).</p>
+
+<p><a name="example"></a></p>
+
+<h2>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<p>Refer to the <a href="https://github.com/sathify/ccss/tree/master/styles">code</a> for an example set-up of the CSS.</p>
+
+<p>Here is an example component in SASS.</p>
+
+<pre><code>.ProductRating {
+  // nested element
+  @include e(title) {
+    ...
+  }
+  // nested element
+  @include e(star) {
+    ...
+    // nested element's modifier
+    @include m(active) {
+      ...
+    }
+  }
+}
+</code></pre>
+
+<p>It compiles to the following CSS:</p>
+
+<pre><code>.ProductRating {
+  ...
+}
+// nested element
+.ProductRating-title {
+  ...
+}
+// nested element
+.ProductRating-star {
+  ...
+}
+// nested element's modifier
+.ProductRating-star--active {
+  ...
+}
+</code></pre>
+
+<p>Your HTML might look something like below.</p>
+
+<pre><code>&lt;div class="ProductRating"&gt;
+  &lt;img alt="Company logo" class="img-logo"&gt;
+  &lt;h3 class="ProductRating-title"&gt;Title&lt;/h3&gt;
+  &lt;div class="u-starHolder"&gt;
+    &lt;span class="ProductRating-star ProductRating-star--active"&gt;&lt;/span&gt;
+    &lt;span class="ProductRating-star ProductRating-star--active"&gt;&lt;/span&gt;
+    &lt;span class="ProductRating-star ProductRating-star--active"&gt;&lt;/span&gt;
+    &lt;span class="ProductRating-star"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Refer to the simplified <a href="https://github.com/sathify/ccss/blob/master/styles/scss/mixins/_bem.scss">BEM mixin</a> which uses reference selector to achieve this and is simpler than @at-root. <a href="http://www.integralist.co.uk/posts/maintainable-css-with-bem/">Working with BEM</a> got way easier in version Sass 3.3&gt; which gives us the ability to write maintainable code that is easy to understand.</p>
+
+<p><a name="contributing"></a></p>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Contributions in the form of issues/PRs for adding more examples, improvements with post processing, clarifications, etc. are most helpful. </p>
+
+<p>Thanks for the initial contributions from <a href="https://github.com/jonrahoi">@jonrahoi</a> <a href="https://github.com/ksheedlo">@ksheedlo</a> <a href="https://github.com/leemunroe">@leemunroe</a> and <a href="https://github.com/eddywashere">@eddywashere</a>.</p>
+
+<p><a name="resources"></a></p>
+
+<h2>
+<a name="resources-and-credits" class="anchor" href="#resources-and-credits"><span class="octicon octicon-link"></span></a>Resources and Credits</h2>
+
+<h5>
+<a name="css" class="anchor" href="#css"><span class="octicon octicon-link"></span></a>CSS</h5>
+
+<ul>
+<li><a href="https://smacss.com/">SMACSS</a></li>
+<li><a href="http://davidwalsh.name/future-sass">SASS Features</a></li>
+<li><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">BEM</a></li>
+<li>
+<a href="https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml">CSS guidlines</a> </li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS">CSS Tips</a></li>
+<li><a href="https://github.com/yahoo/debugCSS">Debug CSS</a></li>
+<li><a href="http://cssguidelin.es/">High-level Guidelines</a></li>
+<li><a href="https://github.com/necolas/idiomatic-css">Idiomatic CSS</a></li>
+<li><a href="http://drewbarontini.com/articles/single-responsibility/">Single Responsibility</a></li>
+</ul><h5>
+<a name="general" class="anchor" href="#general"><span class="octicon octicon-link"></span></a>General</h5>
+
+<ul>
+<li><a href="http://css-tricks.com/modular-future-web-components/">Web Components</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Component-based_software_engineering">Component Based Development</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Composability">Wikipedia definition of composability</a></li>
+</ul><h5>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h5>
+
+<ul>
+<li><a href="http://nicolasgallagher.com/">Nicholas Gallager</a></li>
+<li><a href="https://twitter.com/thierrykoblentz">Thierry Koblentz</a></li>
+<li><a href="http://csswizardry.com/work/">Harry Roberts</a></li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
