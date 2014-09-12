@@ -1,14 +1,18 @@
 CCSS
 ====
 
+CCSS [Component CSS] is an architecture which simplifies the CSS authoring experience for large web applications.
+
+##### Why?
 Large web applications generally have a lot of CSS files and many developers working on them simultaneously. With the advent of so many frameworks, guidelines, tools and methodologies like OOCSS, SMACSS, BEM, etc., developers need a CSS architecture that is maintainable, manageable, and scalable.
 
 As a frontend engineer, I believe that component-based web development is the way forward. [Web components](http://css-tricks.com/modular-future-web-components/)  are a collection of standards that are working their way through the W3C.  They allow us to bundle up markup and styles into reusable HTML elements which are *truly encapsulated*. What this means is we need to start thinking about **component based CSS development**. While the browser makers are implementing these standards, we can use *soft-encapsulation* in the meantime.
 
-CCSS [Component CSS] is an architecture which simplifies the CSS authoring experience for large web applications.
+##### When?
+As a developer, use it when you are setting up the CSS Architecture for a complex web application. 
 
-As a developer, use it when you are setting up the CSS Architecture for a large web application. 
 
+## Contents
 
 1. [Elements](#elements)
 2. [Principles](#principles)
