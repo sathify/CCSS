@@ -58,7 +58,7 @@ Components should have everything necessary to a certain part of the UI and have
 Isolation is more important than code reuse across components as it can increase dependencies and tight coupling, eventually making the CSS less manageable.
 
 ##### Composable
-When authoring CSS in a way that aims to reduce the amount of time spent writing it, one should think of it in a way to spend more time changing HTML classes on elements for modifying or adding styles. It is much easier for all developers to author css when it is like assembling lego blocks than to fight the CSS war. CSS classes are the building blocks which should be used to compose styles.
+When authoring CSS in a way that aims to reduce the amount of time spent writing it, one should think of it in a way to spend more time changing HTML classes on elements for modifying or adding styles. It is much easier for all developers to author css when it is like assembling lego blocks than to fight the [CSS war](https://s3.amazonaws.com/zeroviscosity/d3-js-step-by-step/step-3-adding-a-legend/css.gif). CSS classes are the building blocks which should be used to compose styles.
 
 ##### Predictable
 Predictable means when you author CSS, your rules behave as you expect. This is important for large applications which has many pages. Avoid using overly complicated selectors and generic class names as these can lead to unpredictable css. 
