@@ -42,7 +42,7 @@ SASS is CSS with [superpowers](http://davidwalsh.name/future-sass). Highly recom
 
 
 ##### Compass
-Compass has no class definitions, it is an extension of SASS which provides a lot of utilities. It is used for general useful mixins, and sass compilation. Compass mixins should nearly *always* be used in cases where vendor prefixes are required. This again is a nice to have.
+Compass has no class definitions, it is an extension of SASS which provides a lot of utilities. It is used for general useful mixins, and sass compilation. Compass mixins should nearly *always* be used in cases where vendor prefixes are required. This again is a nice to have and [Bourbon](http://bourbon.io/), on the first look is a great alternative. 
 
 
 <a id="principles"></a>
