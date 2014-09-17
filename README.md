@@ -9,7 +9,7 @@ Large web applications generally have a lot of CSS files and many developers wor
 As a frontend engineer, I believe that component-based web development is the way forward. [Web components](http://css-tricks.com/modular-future-web-components/)  are a collection of standards that are working their way through the W3C.  They allow us to bundle up markup and styles into reusable HTML elements which are *truly encapsulated*. What this means is we need to start thinking about **component based CSS development**. While the browser makers are implementing these standards, we can use *soft-encapsulation* in the meantime.
 
 ##### When?
-As a developer, use it when you are setting up the CSS Architecture for a complex web application. 
+As a developer, use it when you are setting up the CSS Architecture for a complex web application.
 
 
 ## Contents
@@ -24,7 +24,7 @@ As a developer, use it when you are setting up the CSS Architecture for a comple
 8. [Resources](#resources)
 
 
-<a name="elements"></a>
+<a id="elements"></a>
 ## Elements of CCSS
 
 Below are the major elements used either fully or in a modified way to achieve the best configuration for the CCSS architecture.
@@ -43,10 +43,10 @@ SASS is CSS with [superpowers](http://davidwalsh.name/future-sass). Highly recom
 
 ##### Compass
   Compass has no class definitions, it is an extension of SASS which provides a lot of utilities. It is used for general useful mixins, and sass compilation.
-  Compass mixins should nearly *always* be used in cases where vendor prefixes are required. This again is a nice to have. 
+  Compass mixins should nearly *always* be used in cases where vendor prefixes are required. This again is a nice to have.
 
 
-<a name="principles"></a>
+<a id="principles"></a>
 ## Principles of CCSS
 
 ##### Component-based
@@ -61,12 +61,12 @@ Isolation is more important than code reuse across components as it can increase
 When authoring CSS in a way that aims to reduce the amount of time spent writing it, one should think of it in a way to spend more time changing HTML classes on elements for modifying or adding styles. It is much easier for all developers to author css when it is like assembling lego blocks than to fight the [CSS war](https://s3.amazonaws.com/zeroviscosity/d3-js-step-by-step/step-3-adding-a-legend/css.gif). CSS classes are the building blocks which should be used to compose styles.
 
 ##### Predictable
-Predictable means when you author CSS, your rules behave as you expect. This is important for large applications which has many pages. Avoid using overly complicated selectors and generic class names as these can lead to unpredictable css. 
+Predictable means when you author CSS, your rules behave as you expect. This is important for large applications which has many pages. Avoid using overly complicated selectors and generic class names as these can lead to unpredictable css.
 
 ##### Documentation
 Most people assume CSS is self-explanatory. In fact, this is usually not the case! CSS components must be documented clearly which describes how they should be used and what it does.
 
-<a name="directory"></a>
+<a id="directory"></a>
 ## Directory Structure
 Below is an example directory structure for easier viziualization, I have also included an example set up in this repo.
 <pre><code>styles
@@ -107,13 +107,13 @@ Below is an example directory structure for easier viziualization, I have also i
         └── themes
             └── _light.scss**</code></pre>
 
-Only edit/author the files in the <code>scss/</code> folder denoted in the bold above. This allows for updating external libraries easily which are in the `ext/`. Many applications start out with an external CSS framework like bootstrap or foundation, etc. so I added them in the example set up in the `ext/` folder. It's absolutely fine to have all the CSS written from scratch and everything else mentioned above applies. 
+Only edit/author the files in the <code>scss/</code> folder denoted in the bold above. This allows for updating external libraries easily which are in the `ext/`. Many applications start out with an external CSS framework like bootstrap or foundation, etc. so I added them in the example set up in the `ext/` folder. It's absolutely fine to have all the CSS written from scratch and everything else mentioned above applies.
 
 The directory `components/` has desired efficacy in an AngularJS application but please feel free to customize it. More information is in [Architecture](#architecture) section.
 
 In the HTML page, include all the <code>.css</code> files from <code>style/</code> folder which are generated after the SCSS compiles using grunt, compass, etc. Never alter them.
 
-<a name="naming"></a>
+<a id="naming"></a>
 ## Naming Conventions - Simplified BEM
  - `u-className` Global base/utility classes
  - `img-className` Global image classes
@@ -125,7 +125,7 @@ In the HTML page, include all the <code>.css</code> files from <code>style/</cod
 Note the UpperCamelCase Component name to indicate that it is the master element and denotes the boundary of the component. Whereas the element and modifier names are elementName and modifierName respectively. Do not use <code>-</code> to separate out component names as it signifies the start of an element/element name.
 
 
-<a name="architecture"></a>
+<a id="architecture"></a>
 ## Architecture and Design
 
 ##### Grunt
@@ -152,7 +152,7 @@ Any unit of reusable CSS not mentioned above is considered a "component". We use
 
 Another important thing would be to make sure CSS class definition order in a component reflects the html view. This makes it easier to scan, style, edit and apply classes easily. Finally, it's a good idea to have an extensive style-guide for the web application and follow guidelines for [CSS](https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml) and SASS (avoid <code>@extends</code>).
 
-<a name="example"></a>
+<a id="example"></a>
 ## Example
 
 Refer to the [code](https://github.com/sathify/ccss/tree/master/styles) for an example set-up of the CSS.
@@ -210,22 +210,21 @@ Your HTML might look something like below.
 
 Refer to the simplified [BEM mixin](https://github.com/sathify/ccss/blob/master/styles/scss/mixins/_bem.scss) which uses reference selector to achieve this and is simpler than @at-root. [Working with BEM](http://www.integralist.co.uk/posts/maintainable-css-with-bem/) got way easier in version Sass 3.3> which gives us the ability to write maintainable code that is easy to understand.
 
-<a name="contributing"></a>
+<a id="contributing"></a>
 ## Contributing
 
-Contributions in the form of issues/PRs for adding more examples, improvements with post processing, clarifications, etc. are most helpful. 
+Contributions in the form of issues/PRs for adding more examples, improvements with post processing, clarifications, etc. are most helpful.
 
 Thanks for the initial contributions from [@jonrahoi](https://github.com/jonrahoi) [@ksheedlo](https://github.com/ksheedlo) [@leemunroe](https://github.com/leemunroe) and [@eddywashere](https://github.com/eddywashere).
 
-<a name="resources"></a>
+<a id="resources"></a>
 ## Resources and Credits
 
-
-##### CSS 
+##### CSS
 * [SMACSS](https://smacss.com/)
 * [SASS Features](http://davidwalsh.name/future-sass)
 * [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
-* [CSS guidlines](https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml) 
+* [CSS guidlines](https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
 * [CSS Tips](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS)
 * [Debug CSS](https://github.com/yahoo/debugCSS)
 * [High-level Guidelines](http://cssguidelin.es/)
