@@ -134,7 +134,7 @@ Grunt is a great task runner that can automate many common chores (such as compi
 ##### File organization
 Please take a look at the directory structure which is derived from SMACSS. Notice the `ext/` directory, which contains all external frameworks (like Bootstrap). To keep upgrading easy, these should not be modified; instead, overrides and extensions should be placed in the `base/` directory.
 
-`base/` is where global base styles used application wide exits.
+`base/` is where global base styles used application wide exists.
 
 `_base.scss` Base styles for element selectors only. These are sort of "CSS resets".
 
