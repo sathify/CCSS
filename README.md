@@ -79,7 +79,7 @@ Below is an example directory structure for easier visualization, I have also in
     ├── font-awesome.css
     ├── images.css
     ├── main.css
-    └── **scss
+    └── scss
         ├── _config.scss
         ├── base
         │   ├── _animation-classes.scss
@@ -104,9 +104,9 @@ Below is an example directory structure for easier visualization, I have also in
         │   ├── _bem.scss
         │   └── _icon.scss
         └── themes
-            └── _light.scss**</code></pre>
+            └── _light.scss</code></pre>
 
-Only edit/author the files in the `scss/` folder denoted in the bold above. This allows for updating external libraries easily which are in the `ext/`. Many applications start out with an external CSS framework like Bootstrap or Foundation, so I added them in the example setup in the `ext/` folder. It's absolutely fine to have all the CSS written from scratch; everything else mentioned above still applies.
+Only edit/author the files in the `scss/` folder. This allows for updating external libraries easily which are in the `ext/`. Many applications start out with an external CSS framework like Bootstrap or Foundation, so I added them in the example setup in the `ext/` folder. It's absolutely fine to have all the CSS written from scratch; everything else mentioned above still applies.
 
 The example `components/` directory is well-suited for an AngularJS application, but can be customized for other frameworks or applications. More information is in the [Architecture](#architecture) section.
 
