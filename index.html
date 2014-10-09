@@ -59,8 +59,10 @@
 <li><a href="#architecture">Architecture &amp; Design</a></li>
 <li><a href="#example">Example</a></li>
 <li><a href="#contributing">Contributing</a></li>
-<li><a href="#resources">Resources</a></li>
-</ol><p></p>
+<li><a href="resources">Resources</a></li>
+</ol>
+
+<p></p>
 
 <h2>
 <a name="elements-of-ccss" class="anchor" href="#elements-of-ccss"><span class="octicon octicon-link"></span></a>Elements of CCSS</h2>
@@ -137,7 +139,7 @@
     ├── font-awesome.css
     ├── images.css
     ├── main.css
-    └── **scss
+    └── scss
         ├── _config.scss
         ├── base
         │   ├── _animation-classes.scss
@@ -162,9 +164,9 @@
         │   ├── _bem.scss
         │   └── _icon.scss
         └── themes
-            └── _light.scss**</code></pre>
+            └── _light.scss</code></pre>
 
-<p>Only edit/author the files in the <code>scss/</code> folder denoted in the bold above. This allows for updating external libraries easily which are in the <code>ext/</code>. Many applications start out with an external CSS framework like Bootstrap or Foundation, so I added them in the example setup in the <code>ext/</code> folder. It's absolutely fine to have all the CSS written from scratch; everything else mentioned above still applies.</p>
+<p>Only edit/author the files in the <code>scss/</code> folder. This allows for updating external libraries easily which are in the <code>ext/</code>. Many applications start out with an external CSS framework like Bootstrap or Foundation, so I added them in the example setup in the <code>ext/</code> folder. It's absolutely fine to have all the CSS written from scratch; everything else mentioned above still applies.</p>
 
 <p>The example <code>components/</code> directory is well-suited for an AngularJS application, but can be customized for other frameworks or applications. More information is in the <a href="#architecture">Architecture</a> section.</p>
 
@@ -188,7 +190,9 @@
 <code>ComponentName-elementName</code> Component's Element (E)</li>
 <li>
 <code>ComponentName--modifierName</code> Component's Modifier (M)</li>
-</ul><p>Note the UpperCamelCase Component name to indicate that it is the master element; this denotes that it is the <em>boundary of the component</em>. Element and modifier names are elementName and modifierName, respectively. Do not use <code>-</code> to separate out component names, as these signify the start of an element/element name.</p>
+</ul>
+
+<p>Note the UpperCamelCase Component name to indicate that it is the master element; this denotes that it is the <em>boundary of the component</em>. Element and modifier names are elementName and modifierName, respectively. Do not use <code>-</code> to separate out component names, as these signify the start of an element/element name.</p>
 
 <p></p>
 
@@ -205,7 +209,7 @@
 
 <p>Please take a look at the directory structure which is derived from SMACSS. Notice the <code>ext/</code> directory, which contains all external frameworks (like Bootstrap). To keep upgrading easy, these should not be modified; instead, overrides and extensions should be placed in the <code>base/</code> directory.</p>
 
-<p><code>base/</code> is where global base styles used application wide exits.</p>
+<p><code>base/</code> is where global base styles used application wide exists.</p>
 
 <p><code>_base.scss</code> Base styles for element selectors only. These are sort of "CSS resets".</p>
 
@@ -311,14 +315,18 @@
 <li><a href="http://cssguidelin.es/">High-level Guidelines</a></li>
 <li><a href="https://github.com/necolas/idiomatic-css">Idiomatic CSS</a></li>
 <li><a href="http://drewbarontini.com/articles/single-responsibility/">Single Responsibility</a></li>
-</ul><h5>
+</ul>
+
+<h5>
 <a name="general" class="anchor" href="#general"><span class="octicon octicon-link"></span></a>General</h5>
 
 <ul>
 <li><a href="http://css-tricks.com/modular-future-web-components/">Web Components</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Component-based_software_engineering">Component Based Development</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Composability">Wikipedia definition of composability</a></li>
-</ul><h5>
+</ul>
+
+<h5>
 <a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h5>
 
 <ul>
