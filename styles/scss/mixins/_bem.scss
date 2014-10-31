@@ -7,7 +7,7 @@
 
 // Elements get appended with "-" and the $name.
 @mixin e($name) {
-   &-#{$name} {
+  &-#{$name} {
     @content;
   }
 }
