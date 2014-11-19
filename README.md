@@ -226,6 +226,7 @@ Thanks for the initial contributions from [@jonrahoi](https://github.com/jonraho
 * [CSS guidelines](https://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
 * [CSS Tips](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS)
 * [Debug CSS](https://github.com/yahoo/debugCSS)
+* [CSS Triggers](http://csstriggers.com/)
 * [High-level Guidelines](http://cssguidelin.es/)
 * [Idiomatic CSS](https://github.com/necolas/idiomatic-css)
 * [Single Responsibility](http://drewbarontini.com/articles/single-responsibility/)
