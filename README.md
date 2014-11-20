@@ -21,7 +21,7 @@ As a developer, use it when you are setting up the CSS architecture for a comple
 5. [Architecture & Design](#architecture)
 6. [Example](#example)
 7. [Contributing](#contributing)
-8. [Resources](resources)
+8. [Resources](#resources)
 
 
 <a id="elements"></a>
