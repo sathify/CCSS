@@ -214,8 +214,6 @@ Refer to the simplified [BEM mixin](https://github.com/sathify/ccss/blob/master/
 
 Contributions in the form of issues/PRs for adding more examples, improvements with post processing, clarifications, etc. are most helpful.
 
-Thanks for the initial contributions from [@jonrahoi](https://github.com/jonrahoi) [@ksheedlo](https://github.com/ksheedlo) [@leemunroe](https://github.com/leemunroe) and [@eddywashere](https://github.com/eddywashere).
-
 <a id="resources"></a>
 ## Resources and Credits
 
